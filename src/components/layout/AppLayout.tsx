@@ -1,6 +1,5 @@
-import React from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
-import { LayoutDashboard, Users, Settings, LogOut, Heart } from 'lucide-react';
+import { LayoutDashboard, Settings, LogOut, Heart } from 'lucide-react';
 import { AuthService } from '@/features/auth/AuthService';
 import { toast } from 'sonner';
 
