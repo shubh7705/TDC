@@ -1,7 +1,7 @@
 import { auth, db } from '@/lib/firebase';
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged, createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
-import type { User, UserRole } from '@/types';
+import type { User } from '@/types';
 import { useAuthStore } from './useAuthStore';
 
 export const AuthService = {

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { collection, getDocs, query, where, addDoc } from 'firebase/firestore';
+import { collection, getDocs, query, addDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
-import type { Customer, MatchScoreBreakdown } from '@/types';
+import type { Customer } from '@/types';
 import { calculateMatchScore } from '@/services/matchingEngine';
 import { AIService } from '@/services/ai';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -31,7 +31,7 @@ export const MatchesPage = () => {
     }
   });
 
-  const [selectedCustomer, setSelectedCustomer] = useState<Customer | null>(null);
+  const [selectedCustomer] = useState<Customer | null>(null);
   const [selectedMatch, setSelectedMatch] = useState<Customer | null>(null);
   const [isMatchModalOpen, setIsMatchModalOpen] = useState(false);
   const [aiExplanation, setAiExplanation] = useState<any>(null);
